@@ -1,6 +1,6 @@
 {
   "name": "@asyncapi/java-spring-template",
-  "version": "0.22.1",
+  "version": "0.23.2",
   "description": "Java Spring template for AsyncAPI generator.",
   "keywords": [
     "asyncapi",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/asyncapi/java-spring-template#readme",
   "scripts": {
     "test": "echo \"No test specified yet\"",
+    "lint": "echo \"No linter specified yet\"",
     "release": "semantic-release",
     "generate:assets": "echo 'No additional assets need to be generated at the moment'",
     "bump:version": "npm --no-git-tag-version --allow-same-version version $VERSION"
@@ -29,7 +30,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@asyncapi/generator-filters": "^1.0.0",
+    "@asyncapi/generator-filters": "^2.0.0",
     "@asyncapi/generator-hooks": "^0.1.0",
     "fs-extra": "^9.0.0",
     "lodash": "^4.17.15",
@@ -118,6 +119,11 @@
       "javaPackage": {
         "description": "The Java package of the generated classes. Alternatively you can set the specification extension info.x-java-package",
         "default": "com.asyncapi",
+        "required": false
+      },
+      "addTypeInfoHeader": {
+        "description": "Only for Kafka. Add type information to the message header",
+        "default": "true",
         "required": false
       }
     },
